@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <th:block th:insert="fragments/libcss"></th:block>
+</head>
+
+<body>
+<div id="app">
+    <div id="sidebar" class="active" th:insert="fragments/sidebar">
+    </div>
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
+
+        <div class="page-heading">
+            <!-- Basic Vertical form layout section start -->
+            <section id="basic-vertical-layouts">
+                <div class="row match-height">
+                    <div class="col-md-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Employee Form</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <form class="form form-vertical" th:object="${addEmployee}"
+                                          th:action="@{/employee/add}" th:method="POST">
+                                        <div class="form-body">
+                                            <div class="row">
+                                                <input type="hidden" id="id-name-vertical"
+                                                       class="form-control" th:field="*{id}"
+                                                       placeholder="First Name">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="first-name-vertical">First Name</label>
+                                                        <input type="text" id="first-name-vertical"
+                                                               class="form-control" th:field="*{firstName}"
+                                                               placeholder="First Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="first-name-vertical">Last Name</label>
+                                                        <input type="text" id="last-name-vertical"
+                                                               class="form-control" th:field="*{lastName}"
+                                                               placeholder="Last Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="email-id-vertical">Email</label>
+                                                        <input type="email" id="email-id-vertical"
+                                                               class="form-control" th:field="*{email}"
+                                                               placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="contact-info-vertical">Position</label>
+                                                        <input type="text" id="contact-info-vertical"
+                                                               class="form-control" th:field="*{position}"
+                                                               placeholder="Position">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="password-vertical">Phone Number</label>
+                                                        <input type="text" id="password-vertical"
+                                                               class="form-control" th:field="*{phoneNumber}"
+                                                               placeholder="Phone Number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-end">
+                                                    <button type="submit"
+                                                            class="btn btn-primary me-1 mb-1">Submit
+                                                    </button>
+                                                    <button type="reset"
+                                                            class="btn btn-light-secondary me-1 mb-1">Reset
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer>
+            <div class="footer clearfix mb-0 text-muted">
+                <div class="float-start">
+                    <p>2021 &copy; Mazer</p>
+                </div>
+                <div class="float-end">
+                    <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
+                            href="http://ahmadsaugi.com">A. Saugi</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+</div>
+<script th:src="@{/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+
+<script th:src="@{/assets/js/main.js}"></script>
+</body>
+
+</html>
